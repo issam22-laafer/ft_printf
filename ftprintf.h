@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ftprintf.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 15:00:48 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/21 15:01:09 by lissam           ###   ########.fr       */
+/*   Created: 2023/11/22 14:42:22 by lissam            #+#    #+#             */
+/*   Updated: 2023/11/22 14:42:24 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#ifndef FT_PRINTF
+# define FT_PRINTF
 
-int	ft_printf(const char *format, ...)
-{
-	va_list	list;
-	int		i;
+# include <stdarg.h>
+# include <stdio.h>
+# include <unistd.h>
 
-	va_start(list, format);
-	i = 0;
-	while (format[i] != '\0')
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (ft_strchr("cspdiuxX", format[i]))
-				return ;
-			else if (format[i] == '%')
-				ft_putchar(format[i]);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-		}
-	}
-}
+void	ft_putnbr(int nb);
+void	ft_putnbr(int nb);
+int		ft_printf(const char *format, ...);
+char	*ft_strchr(const char *s, int c);
+
+#endif

@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 15:00:48 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/21 15:01:09 by lissam           ###   ########.fr       */
+/*   Created: 2023/11/22 17:13:06 by lissam            #+#    #+#             */
+/*   Updated: 2023/11/22 17:13:08 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_putnbr(int nb)
 {
-	va_list	list;
-	int		i;
-
-	va_start(list, format);
-	i = 0;
-	while (format[i] != '\0')
+	if (nb == -2147483648)
 	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (ft_strchr("cspdiuxX", format[i]))
-				return ;
-			else if (format[i] == '%')
-				ft_putchar(format[i]);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-		}
+		write(1, "-2147483648", 11);
+	}
+	else if (nb > 9)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
+		ft_putnbr(nb);
+	}
+	else
+	{
+		ft_putchar(nb + '0');
 	}
 }

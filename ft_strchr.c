@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 15:00:48 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/21 15:01:09 by lissam           ###   ########.fr       */
+/*   Created: 2023/11/22 18:07:11 by lissam            #+#    #+#             */
+/*   Updated: 2023/11/22 18:07:17 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-int	ft_printf(const char *format, ...)
+char	*ft_strchr(const char *s, int c)
 {
-	va_list	list;
-	int		i;
+	int	i;
 
-	va_start(list, format);
 	i = 0;
-	while (format[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (format[i] == '%')
-		{
-			i++;
-			if (ft_strchr("cspdiuxX", format[i]))
-				return ;
-			else if (format[i] == '%')
-				ft_putchar(format[i]);
-		}
-		else
-		{
-			ft_putchar(format[i]);
-		}
+		i++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
