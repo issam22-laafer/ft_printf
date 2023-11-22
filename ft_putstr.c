@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 17:13:06 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/22 17:13:08 by lissam           ###   ########.fr       */
+/*   Created: 2023/11/22 18:41:32 by lissam            #+#    #+#             */
+/*   Updated: 2023/11/22 18:41:34 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftprintf.h"
 
-void	ft_putnbr(int nb)
+void ft_putstr(char *str)
 {
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	else if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb = -nb;
-		ft_putnbr(nb);
-	}
-	else
-	{
-		ft_putchar(nb + '0');
-	}
+    int i;
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        ft_putchar(str[i]);
+        i++;
+    }
 }
