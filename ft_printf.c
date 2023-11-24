@@ -24,6 +24,8 @@ static void type_check(char ch, va_list list)
 		ft_putstr(va_arg(list,char *));
 	else if(ch == 'x')
 		ft_print_hex(va_arg(list,unsigned int));
+	else if(ch == 'X')
+		ft_print_hex_u(va_arg(list,unsigned int));
 	
 }
 
@@ -57,7 +59,7 @@ int main()
 	// ft_printf("issam', 66, \n%s\n%d\n%%\n%i","gg", 15, 89);
 	// ft_printf("\n==========================\n");
 	// printf("issam', 66, \n%s\n%d\n%%\n%i\n","gg", 15, 89);
-	ft_printf("salam : \n%s\n%d\n%i\n%x\n%c","ana issam laafar", 5746,4039,256,'c');
-	ft_printf("==============\n");
+	ft_printf("salam : \n%s\n%d\n%i\n%x\n%c\n%X","ana issam laafar", 5746,4039,2147483647,'c',2147483647);
+	ft_printf("\n==============\n");
 	printf("%c\n",'c');
 }

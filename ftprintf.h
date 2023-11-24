@@ -24,5 +24,6 @@ void	ft_putchar(char c);
 char	*ft_strchr(const char *s, int c);
 void	ft_putstr(char *str);
 void ft_print_hex(unsigned  int n);
+void ft_print_hex_u(unsigned  int n);
 
 #endif
