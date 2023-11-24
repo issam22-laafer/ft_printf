@@ -38,7 +38,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (ft_strchr("cspdiuxX", format[i]))
+			if (ft_strchr(" cspdiuxX",format[i]))
 				type_check(format[i], list);
 			else if (format[i] == '%')
 				ft_putchar(format[i]);
