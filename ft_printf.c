@@ -12,11 +12,25 @@
 
 #include "ftprintf.h"
 
+static void type_check(char ch, va_list list)
+{
+	if(ch == 'c')
+		ft_putchar(va_arg(list,int));
+	else if(ch == 'd')
+		ft_putnbr(va_arg(list,int));
+	else if(ch == 'i')
+		ft_putnbr(va_arg(list,int));
+	else if(ch == 's')
+		ft_putstr(va_arg(list,char *));
+	else if(ch == 'x')
+		ft_print_hex(va_arg(list,unsigned int));
+	
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	list;
 	int		i;
-
 	va_start(list, format);
 	i = 0;
 	while (format[i] != '\0')
@@ -25,7 +39,7 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			if (ft_strchr("cspdiuxX", format[i]))
-				return ;
+				type_check(format[i], list);
 			else if (format[i] == '%')
 				ft_putchar(format[i]);
 		}
@@ -33,5 +47,17 @@ int	ft_printf(const char *format, ...)
 		{
 			ft_putchar(format[i]);
 		}
+		i++;
 	}
+	va_end(list);
+}
+
+int main()
+{
+	// ft_printf("issam', 66, \n%s\n%d\n%%\n%i","gg", 15, 89);
+	// ft_printf("\n==========================\n");
+	// printf("issam', 66, \n%s\n%d\n%%\n%i\n","gg", 15, 89);
+	ft_printf("salam : \n%s\n%d\n%i\n%x\n%c","ana issam laafar", 5746,4039,256,'c');
+	ft_printf("==============\n");
+	printf("%c\n",'c');
 }
