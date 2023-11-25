@@ -11,9 +11,28 @@
 /* ************************************************************************** */
 
 #include "ftprintf.h"
-
-void	ft_putnbr(int nb)
+static int	length_int(long int c)
 {
+	int	i;
+
+	i = 1;
+	if (c < 0)
+	{
+		i = i + 1;
+		c = -c;
+	}
+	while (c / 10)
+	{
+		i++;
+		c = c / 10;
+	}
+	return (i);
+}
+int	ft_putnbr(int nb)
+{
+	long nbr;
+
+	nbr = (long)nb;
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
@@ -33,4 +52,5 @@ void	ft_putnbr(int nb)
 	{
 		ft_putchar(nb + '0');
 	}
+	return (length_int(nbr)); 
 }

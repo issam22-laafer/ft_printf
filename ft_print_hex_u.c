@@ -1,6 +1,6 @@
 #include "ftprintf.h"
 
-void ft_print_hex_u(unsigned  int nb)
+int ft_print_hex_u(unsigned  int nb)
 {
         char array[] = "0123456789ABCDEF";
         int ar[25];
@@ -16,10 +16,10 @@ void ft_print_hex_u(unsigned  int nb)
                 ar[i] = nb % 16;
                 nb = nb / 16;
         }
-        i = 0;
-        while (count > 0)
+        while (i > 0)
         {
-                ft_putchar(array[ar[count]]);
-                count--;
+                ft_putchar(array[ar[i]]);
+                i--;
         }
+        return (count);
 }
