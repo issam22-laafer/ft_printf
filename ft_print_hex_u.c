@@ -1,5 +1,6 @@
 #include "ftprintf.h"
-static void print_hex_u(unsigned long int nb)
+
+void ft_print_hex_u(unsigned  int nb)
 {
         char array[] = "0123456789ABCDEF";
         int ar[25];
@@ -21,12 +22,4 @@ static void print_hex_u(unsigned long int nb)
                 ft_putchar(array[ar[count]]);
                 count--;
         }
-}
-
-void ft_print_hex_u(unsigned  int n)
-{
-        
-        unsigned long int nb;
-        nb = n;
-        print_hex_u(nb);
 }
