@@ -59,7 +59,7 @@ int	ft_printf(const char *format, ...)
 				count += ft_putchar(format[i]);
 		}
 		else
-			ft_putchar(format[i]);
+			count += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(list);
