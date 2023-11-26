@@ -6,7 +6,7 @@
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 15:55:53 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/26 16:05:52 by lissam           ###   ########.fr       */
+/*   Updated: 2023/11/26 21:01:00 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_print_hex(unsigned int nb)
 {
-	int count;
-	char *s;
+	int		count;
+	char	*s;
 
 	count = 0;
 	s = "0123456789abcdef";

@@ -6,7 +6,7 @@
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 18:23:37 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/26 18:23:46 by lissam           ###   ########.fr       */
+/*   Updated: 2023/11/26 21:00:36 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_print_hex_p(unsigned long nb)
 {
-	int count;
-	char *s;
+	int		count;
+	char	*s;
 
 	count = 0;
 	s = "0123456789abcdef";
