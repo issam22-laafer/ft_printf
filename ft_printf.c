@@ -18,20 +18,20 @@ static int	type_check(char ch, va_list list)
 
 	count = 0;
 	if (ch == 'c')
-		count += ft_putchar(va_arg(list, int));
+		count = ft_putchar(va_arg(list, int));
 	else if (ch == 'd' || ch == 'i')
-		count += ft_putnbr(va_arg(list, int));
+		count = ft_putnbr(va_arg(list, int));
 	else if (ch == 's')
-		count += ft_putstr(va_arg(list, char *));
+		count = ft_putstr(va_arg(list, char *));
 	else if (ch == 'x')
-		count += ft_print_hex(va_arg(list, unsigned int));
+		count = ft_print_hex(va_arg(list, unsigned int));
 	else if (ch == 'X')
-		count += ft_print_hex_u(va_arg(list, unsigned int));
+		count = ft_print_hex_u(va_arg(list, unsigned int));
 	else if (ch == 'u')
-		count += print_uns_dec(va_arg(list, unsigned int));
+		count = print_uns_dec(va_arg(list, unsigned int));
 	else if (ch == 'p')
 	{
-		count += ft_putstr("0x");
+		count = ft_putstr("0x");
 		count += ft_print_hex_p(va_arg(list, unsigned long));
 	}
 	return (count);

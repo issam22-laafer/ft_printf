@@ -14,25 +14,19 @@
 
 int	ft_print_hex_u(unsigned int nb)
 {
-	char	*array;
-	int		ar[25];
-	int		i;
-	int		count;
+	int count;
+	char *s;
 
-	i = 0;
-	array = "0123456789ABCDEF";
 	count = 0;
-	while (nb)
+	s = "0123456789ABCDEF";
+	if (nb >= 16)
 	{
-		i++;
-		count++;
-		ar[i] = nb % 16;
-		nb = nb / 16;
+		count += ft_print_hex_u(nb / 16);
+		count += ft_print_hex_u(nb % 16);
 	}
-	while (i > 0)
+	else
 	{
-		ft_putchar(array[ar[i]]);
-		i--;
+		count += ft_putchar(s[nb]);
 	}
 	return (count);
 }
