@@ -6,21 +6,21 @@
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:41:32 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/22 18:41:34 by lissam           ###   ########.fr       */
+/*   Updated: 2023/11/26 17:09:08 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "ft_printf.h"
 
-int ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != '\0')
-    {
-        ft_putchar(str[i]);
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }

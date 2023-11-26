@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "ft_printf.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -23,7 +23,5 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if ((char)c == '\0')
-		return ((char *)&s[i]);
 	return (NULL);
 }

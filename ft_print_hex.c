@@ -1,25 +1,38 @@
-#include "ftprintf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/26 15:55:53 by lissam            #+#    #+#             */
+/*   Updated: 2023/11/26 17:00:40 by lissam           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_print_hex(unsigned  int nb)
+#include "ft_printf.h"
+
+int	ft_print_hex(unsigned int nb)
 {
-        char array[] = "0123456789abcdef";
-        int ar[25];
-        int i;
-        int count;
+	char	*array;
+	int		ar[25];
+	int		i;
+	int		count;
 
-        i = 0;
-        count = 0;
-        while (nb)
-        {
-                i++;
-                count++;
-                ar[i] = nb % 16;
-                nb = nb / 16;
-        }
-        while (count > 0)
-        {
-                ft_putchar(array[ar[count]]);
-                count--;
-        }
-        return (count);
+	array = "0123456789abcdef";
+	i = 0;
+	count = 0;
+	while (nb)
+	{
+		i++;
+		count++;
+		ar[i] = nb % 16;
+		nb = nb / 16;
+	}
+	while (i > 0)
+	{
+		ft_putchar(array[ar[i]]);
+		i--;
+	}
+	return (count);
 }

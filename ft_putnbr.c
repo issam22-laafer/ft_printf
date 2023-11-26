@@ -6,11 +6,12 @@
 /*   By: lissam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:13:06 by lissam            #+#    #+#             */
-/*   Updated: 2023/11/22 17:13:08 by lissam           ###   ########.fr       */
+/*   Updated: 2023/11/26 17:10:42 by lissam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "ft_printf.h"
+
 static int	length_int(long int c)
 {
 	int	i;
@@ -28,9 +29,10 @@ static int	length_int(long int c)
 	}
 	return (i);
 }
+
 int	ft_putnbr(int nb)
 {
-	long nbr;
+	long	nbr;
 
 	nbr = (long)nb;
 	if (nb == -2147483648)
@@ -52,5 +54,5 @@ int	ft_putnbr(int nb)
 	{
 		ft_putchar(nb + '0');
 	}
-	return (length_int(nbr)); 
+	return (length_int(nbr));
 }
