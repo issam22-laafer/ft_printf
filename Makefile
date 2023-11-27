@@ -11,10 +11,10 @@ FLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar -rc $(NAME) $(OBJ)
+	ar -rc $(NAME) $?
 
-$(OBJ) : $(SRC)
-	$(CC) $(FLAGS) -c $(SRC)
+%.o:%.c
+	$(CC) $(FLAGS) -c $?
 
 clean:
 	rm -f $(OBJ)
