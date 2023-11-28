@@ -32,7 +32,7 @@ static int	type_check(char ch, va_list list)
 	else if (ch == 'p')
 	{
 		count = ft_putstr("0x");
-		count += ft_print_hex_p(va_arg(list, unsigned long));
+		count += ft_print_hex_p((unsigned long)va_arg(list, void *));
 	}
 	return (count);
 }
@@ -65,3 +65,12 @@ int	ft_printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
+// int main()
+// {
+// 	//printf("%d\n",printf("%i\n%i%",INT_MIN,INT_MAX));
+// 	//ft_printf("============\n");
+// 	//ft_printf("%d\n",ft_printf("%i\n%i%",INT_MIN,INT_MAX));
+// 	int  i = 0;
+// 	// i = printf("%");
+// 	printf("%m", i);
+// }

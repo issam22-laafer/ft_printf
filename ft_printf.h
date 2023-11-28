@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <limits.h>
 
 int		ft_putnbr(int nb);
 int		ft_putnbr(int nb);
