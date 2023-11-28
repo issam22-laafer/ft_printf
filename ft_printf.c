@@ -65,12 +65,3 @@ int	ft_printf(const char *format, ...)
 	va_end(list);
 	return (count);
 }
-// int main()
-// {
-// 	//printf("%d\n",printf("%i\n%i%",INT_MIN,INT_MAX));
-// 	//ft_printf("============\n");
-// 	//ft_printf("%d\n",ft_printf("%i\n%i%",INT_MIN,INT_MAX));
-// 	int  i = 0;
-// 	// i = printf("%");
-// 	printf("%m", i);
-// }
